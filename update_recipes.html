@@ -1,0 +1,26 @@
+{% extends "home/base.html" %}
+{% block start %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="recipe_name">Update Recipe Name</label>
+      <input class="form-control" name="recipe_name" value="{{recipes.recipe_name}}" id="recipe_name" type="text" aria-describedby="emailHelp" placeholder="Enter name" required>
+       </div>
+    <div class="form-group">
+      <label for="recipe_description">Update Recipe Description</label>
+      <textarea class="form-control" name="recipe_description" id="recipe_description" required> {{recipes.recipe_description}} </textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Update Recipe Image</label>
+        <input type="file" name="recipe_image" class="form-control" id="exampleInputPassword1" >
+    
+      
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+  
+
+  
+  
+{% endblock %}
